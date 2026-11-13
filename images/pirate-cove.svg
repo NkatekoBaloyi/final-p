@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Pirate ship and treasure chest in a moonlit cove">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1636"/><stop offset=".6" stop-color="#7a3a55"/><stop offset="1" stop-color="#f09a45"/></linearGradient>
+<linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3a5c"/><stop offset="1" stop-color="#0a1226"/></linearGradient>
+<radialGradient id="gold"><stop offset="0" stop-color="#ffd86b" stop-opacity=".9"/><stop offset="1" stop-color="#ffd86b" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="450" fill="url(#sky)"/><circle cx="620" cy="90" r="38" fill="#fff3d0"/><circle cx="636" cy="82" r="34" fill="#4a3050" opacity=".25"/>
+<rect y="270" width="800" height="180" fill="url(#sea)"/>
+<path d="M0 285 Q50 275 100 285 T200 285 T300 285 T400 285 T500 285 T600 285 T700 285 T800 285" stroke="#f0a65a" stroke-width="2" fill="none" opacity=".6"/>
+<g fill="#0b0d1a"><path d="M300 270 L520 270 L495 305 L335 305 Z"/><rect x="408" y="130" width="5" height="142"/><rect x="350" y="170" width="5" height="100"/><rect x="462" y="180" width="5" height="90"/>
+<path d="M360 140 Q410 150 460 140 L455 215 Q410 225 365 215Z"/><path d="M318 180 Q352 188 388 180 L384 235 Q352 242 322 235Z" opacity=".95"/><path d="M425 190 Q445 196 490 190 L486 240 Q452 246 430 240Z"/>
+<path d="M413 130 L450 140 L413 150Z" fill="#7a1f2b"/></g>
+<path d="M0 450V330Q70 290 140 330Q190 360 230 450Z" fill="#0b0d1a"/><path d="M800 450V320Q720 285 650 325Q600 355 560 450Z" fill="#0b0d1a"/>
+<circle cx="280" cy="400" r="110" fill="url(#gold)"/>
+<g transform="translate(280 395)"><rect x="-60" y="-22" width="120" height="52" rx="6" fill="#5a3517" stroke="#2e1a0a" stroke-width="3"/><path d="M-60 -22 Q0 -62 60 -22Z" fill="#6e4220" stroke="#2e1a0a" stroke-width="3"/>
+<rect x="-6" y="-26" width="12" height="22" fill="#d6a93c"/><path d="M-50 -6H50" stroke="#d6a93c" stroke-width="5"/>
+<g fill="#ffd86b"><circle cx="-34" cy="-30" r="7"/><circle cx="-18" cy="-36" r="6"/><circle cx="30" cy="-34" r="7"/></g></g></svg>

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root{--green:#2d4d3d;--green-d:#243f32;--cream:#faf8f2;--sage:#eef0e6;--line:#dfe3d6;--ink:#1f2a24;--muted:#66726a;--sand:#e9dfc9;--err:#b3261e;--r:8px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:15px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.2;margin:0 0 .6rem}
+h1{font-size:2.4rem}h2{font-size:1.7rem}h3{font-size:1.15rem}
+p{margin:0 0 .8rem}ul,ol{margin:0;padding:0}
+a{color:inherit}img{max-width:100%;display:block}
+small{font-size:.7rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+hr{display:none}
+:focus-visible{outline:3px solid #8fb39f;outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* buttons */
+button{font:600 .85rem Inter,sans-serif;background:var(--green);color:#fff;border:0;border-radius:6px;padding:.65rem 1.2rem;cursor:pointer;transition:background .2s}
+button:hover{background:var(--green-d)}
+a>button{pointer-events:none}
+
+/* header + dropdown */
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:2rem;padding:.7rem max(1.5rem,calc((100% - 1200px)/2));background:var(--sage);border-bottom:1px solid var(--line)}
+header>a:first-child{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-size:.7rem;letter-spacing:.05em;color:var(--green)}
+header img{border-radius:6px;background:var(--green)}
+header nav{margin-left:auto}
+header nav ul{display:flex;gap:1.6rem;list-style:none}
+header nav a{text-decoration:none;font-size:.85rem;padding:.4rem 0;display:inline-block}
+header nav a:hover,header nav a[aria-current]{color:var(--green);font-weight:600}
+header>a:last-child button{padding:.55rem 1.1rem}
+.has-dropdown{position:relative}
+.dropdown{display:none;position:absolute;top:100%;left:-1rem;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 8px 24px rgba(0,0,0,.1);padding:.4rem 0;list-style:none;flex-direction:column;gap:0!important}
+.has-dropdown:hover .dropdown,.has-dropdown:focus-within .dropdown,.has-dropdown.open .dropdown{display:flex}
+.dropdown a{display:block;width:100%;padding:.5rem 1rem!important;font-weight:400!important}
+.dropdown a:hover{background:var(--sage)}
+.nav-toggle{display:none;background:none;color:var(--green);font-size:1.4rem;padding:.2rem .6rem;border:1px solid var(--line)}
+
+/* page wrappers */
+main>:is(h1,p,nav,hr,img){width:min(1100px,100% - 3rem);margin-inline:auto}
+main>section{padding:3.5rem max(1.5rem,calc((100% - 1100px)/2))}
+main>section:nth-of-type(odd){background:var(--cream)}
+main>section:nth-of-type(even){background:var(--sage)}
+main>section:first-child:has(>img)~section:nth-of-type(odd){background:var(--sage)}
+main>section:first-child:has(>img)~section:nth-of-type(even){background:var(--cream)}
+section>h2{text-align:center}
+
+/* home hero */
+main>section:first-child:has(>img){position:relative;min-height:440px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;background:#1d2f25;overflow:hidden}
+main>section:first-child>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+main>section:first-child>*:not(img){position:relative}
+main>section:first-child>p:first-of-type{font-size:.65rem;letter-spacing:.15em}
+main>section:first-child h1{font-size:3rem;margin-bottom:.4rem}
+main>section:first-child button{background:#fff;color:var(--green)}
+
+/* room cards (home, rooms, detail "other adventures") */
+section:has(>article>img){display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-content:start}
+section:has(>article>img)>h2{grid-column:1/-1}
+article{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);display:flex;flex-direction:column}
+article>img{width:100%;height:190px;object-fit:cover;background:var(--green)}
+article>:not(img){margin-inline:1.1rem}
+article>small:first-of-type{margin-top:1rem;margin-bottom:0}
+article>p:has(>small){margin:1rem 1.1rem 0}
+article>p:has(>small):empty,article>p>small:empty{display:none}
+article h3{margin-top:.2rem}
+article>p{font-size:.78rem;color:var(--muted);margin-bottom:.3rem}
+article>a{margin:.6rem 1.1rem 1.1rem;margin-top:auto;padding-top:.6rem;display:block}
+article>a button{width:100%}
+article .row{display:flex;justify-content:space-between;align-items:center}
+article .row strong{color:var(--ink);font-size:.85rem}
+.stars{color:var(--green);letter-spacing:2px}
+/* detail page: secondary buttons */
+main:has(>aside) section:has(>article>img) article>a button{background:var(--cream);color:var(--ink);border:1px solid var(--line)}
+/* team cards */
+section:has(>article):not(:has(>article>img)){display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+section:has(>article):not(:has(>article>img))>h2{grid-column:1/-1;text-align:left}
+section:not(:has(>article>img))>article{align-items:center;text-align:center;padding:1.6rem 1rem}
+section:not(:has(>article>img))>article::before{content:'';width:68px;height:68px;border-radius:50%;background:var(--sage);border:1px solid var(--line);margin-bottom:.8rem}
+
+/* how it works */
+ol{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center}
+ol li{counter-increment:s}
+ol li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;margin:0 auto .8rem;border-radius:50%;background:var(--sand);color:var(--green);font-weight:600}
+ol p{font-size:.85rem;color:var(--muted);max-width:280px;margin-inline:auto}
+section:has(>ol)>h2{margin-bottom:2rem}
+
+/* testimonials */
+section:has(>blockquote){display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+section:has(>blockquote)>h2,section:has(>blockquote)>p{grid-column:1/-1;text-align:center;margin:0}
+blockquote{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem;font:1.05rem/1.5 'Playfair Display',serif}
+blockquote p{font:inherit;color:var(--ink)}
+blockquote footer{font:500 .8rem Inter,sans-serif;color:var(--muted);padding:0;background:none;border:0;display:block}
+
+/* faq accordion */
+dl{max-width:760px;margin:1.5rem auto 0}
+dt{font-weight:600;padding:1rem 2rem 1rem 0;border-top:1px solid var(--line);cursor:pointer;position:relative}
+dt::after{content:'+';position:absolute;right:.4rem;font-size:1.3rem;color:var(--green)}
+dt.open::after{content:'−'}
+dd{margin:0 0 1rem;color:var(--muted)}
+.js dd{display:none}.js dt.open+dd{display:block}
+
+/* CTA band (injected on home) */
+.cta{background:var(--green)!important;color:#fff;text-align:center}
+.cta h2{color:#fff}.cta button{background:#fff;color:var(--green)}
+
+/* rooms page */
+main>h1{margin-top:3rem}
+main>h1+p{color:var(--muted)}
+main>nav ul{display:flex;gap:.6rem;list-style:none;margin:1rem 0 2rem;flex-wrap:wrap}
+main>nav a{display:block;text-decoration:none;font-size:.75rem;padding:.35rem .9rem;border-radius:99px;background:var(--sage);border:1px solid var(--line)}
+main>nav a.active{background:var(--green);color:#fff;border
